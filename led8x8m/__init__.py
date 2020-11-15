@@ -1,22 +1,23 @@
 # led8x8m/__init__.py
 import RPi.GPIO as IO
-PIN_X = (12, 22, 27, 25, 17, 24, 23, 18)
-PIN_Y = (21, 20, 26, 16, 19, 13, 6, 5)
 
 
 class LedMatrix():
+    PIN_X = (12, 22, 27, 25, 17, 24, 23, 18)
+    PIN_Y = (21, 20, 26, 16, 19, 13, 6, 5)
+
     def __init__(self):
         IO.setwarnings(False)
         IO.setmode(IO.BCM)
-        for pin_number in PIN_X + PIN_Y:
+        for pin_number in self.PIN_X + self.PIN_Y:
             IO.setup(pin_number, IO.OUT)
 
     def xy_on(self, x, y):
         """x and y are int 0-7"""
-        for index, pin in enumerate(PIN_X):
+        for index, pin in enumerate(self.PIN_X):
             IO.output(pin, 1 if index == x else 0)
 
-        for index, pin in enumerate(PIN_Y):
+        for index, pin in enumerate(self.PIN_Y):
             IO.output(pin, 0 if index == y else 1)
 
 
