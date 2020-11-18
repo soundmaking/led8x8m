@@ -5,6 +5,10 @@ class GridWalker(object):
         self.x_pos = start_x
         self.y_pos = start_y
         self.direction = Direction.S
+        self.x_min = 0
+        self.y_min = 0
+        self.x_max = 7
+        self.y_max = 7
 
     def get_pos(self):
         return self.x_pos, self.y_pos

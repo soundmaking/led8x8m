@@ -7,6 +7,10 @@ class TestGridWalker(unittest.TestCase):
         gw = GridWalker(1, 2)
         self.assertEqual(gw.x_pos, 1)
         self.assertEqual(gw.y_pos, 2)
+        self.assertEqual(gw.x_min, 0)
+        self.assertEqual(gw.x_max, 7)
+        self.assertEqual(gw.y_min, 0)
+        self.assertEqual(gw.y_max, 7)
 
     def test_get_pos(self):
         gw = GridWalker(1, 2)
