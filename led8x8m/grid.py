@@ -23,6 +23,15 @@ class GridWalker(object):
         }
         self.direction = options[self.direction]
 
+    def turn_left(self):
+        options = {
+            Direction.S: Direction.E,
+            Direction.E: Direction.N,
+            Direction.N: Direction.W,
+            Direction.W: Direction.S,
+        }
+        self.direction = options[self.direction]
+
 
 class Direction(object):
     N = (0, -1)

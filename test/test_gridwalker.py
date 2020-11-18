@@ -38,6 +38,18 @@ class TestGridWalker(unittest.TestCase):
         gw.turn_right()
         self.assertEqual(gw.direction, Direction.S)
 
+    def test_direction_turn_left(self):
+        gw = GridWalker(1, 2)
+        self.assertEqual(gw.direction, Direction.S)
+        gw.turn_left()
+        self.assertEqual(gw.direction, Direction.E)
+        gw.turn_left()
+        self.assertEqual(gw.direction, Direction.N)
+        gw.turn_left()
+        self.assertEqual(gw.direction, Direction.W)
+        gw.turn_left()
+        self.assertEqual(gw.direction, Direction.S)
+
 
 class TestDirection(unittest.TestCase):
     def test_direction(self):
