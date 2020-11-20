@@ -11,3 +11,10 @@ class TestLedMatrix(unittest.TestCase):
         self.assertEqual(len(set_x), 8)
         self.assertEqual(len(set_y), 8)
         self.assertTrue(set_x.isdisjoint(set_y))
+
+    def test_matrix_buffer(self):
+        self.assertIsInstance(LedMatrix.matrix_buffer, list)
+        self.assertEqual(len(LedMatrix.matrix_buffer), 8)
+        for n in range(8):
+            self.assertIsInstance(LedMatrix.matrix_buffer[n], list)
+            self.assertEqual(len(LedMatrix.matrix_buffer[n]), 8)
